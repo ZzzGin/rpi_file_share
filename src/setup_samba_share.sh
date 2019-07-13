@@ -22,7 +22,8 @@ else
     share_name=$2
 fi
 
-function command_status(){
+command_status()
+{
     if [ $? -ne 0 ]; then
     	echo $log_e" "$1
     	exit 1
@@ -76,7 +77,7 @@ echo $log_n" setting samba up password"
 sudo smbpasswd -a pi
 
 echo $log_n" restarting samba server"
-sudo /etc/init.d/samba restart
+sudo samba restart
 
 echo $log_n" samba installation and configuration is successful"
 
